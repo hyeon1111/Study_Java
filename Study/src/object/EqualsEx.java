@@ -23,7 +23,13 @@ class Student {
 		}
 		return false;
 	}
+
+	public int hashCode() {
+		return studentID;
+	}
+	
 }// class_end
+
 
 
 public class EqualsEx {
@@ -44,7 +50,18 @@ public class EqualsEx {
 		System.out.println(std1 == std2);	// false
 		System.out.println(std1.equals(std2));	//false -> equals 재정의 -> true
 		
+		System.out.println("==========");
 		
+		System.out.println(std1.hashCode());	// 1365202186 -> 10진수로 반환
+		System.out.println(std2.hashCode());	// 1651191114
+		System.out.println(System.identityHashCode(std2));	// 1651191114
+		
+		System.out.println("==========");
+
+		
+		// 3556498 -> 힙 메모리 위치 다르다
+		System.out.println(str1.hashCode());
+		System.out.println(str2.hashCode());
 	}
 
 }
